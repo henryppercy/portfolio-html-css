@@ -1,0 +1,402 @@
+/* universal CSS */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  --accent-color-one: #008563;
+  --background-color: #212121;
+  --light-color: #ffffff;
+}
+
+body {
+  font-family: 'Heebo', sans-serif;
+  color: var(--light-color);
+  background-color: var(--background-color);
+}
+
+footer {
+  color: var(--light-color);
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
+.headword-highlight {
+  color: var(--accent-color-one);
+}
+
+/*card element*/
+.card {
+  box-shadow: 0.2rem 0.2rem 1rem #00000090;
+  border-radius: 0.5rem;
+  background-color: var(--background-color);  
+}
+
+.card h2 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 1rem 1rem 0 ;  
+}
+
+.card p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.75rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+/*underline animation*/
+.underline {
+  padding-bottom: 0.25rem;
+  position: relative;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--accent-color-one);
+  transition: width 0.25s ease-out;
+}
+
+.underline:hover::before {
+  width: 100%;
+}
+
+/* navbar */
+nav {
+  background-color: var(--background-color);
+  box-shadow: 0 2px 4px -1px #00000090;
+  padding: 1em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  font-weight: bold;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+nav li {
+  padding-right: 1.25rem;
+}
+
+nav h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.home.underline {
+  padding-bottom: 0.3rem;
+}
+
+/* hero/home */
+.hero {
+  width: 80%;
+  margin: 0 auto;
+  padding: 4rem 0 2rem;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5rem;
+}
+
+.hero-title {
+  align-self: center;
+  justify-self: center;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.hero-title h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero-title h2 {
+  font-size: 2rem;
+  margin: 1rem 0 2rem;
+}
+
+.hero-title p {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.hero-img {
+  width: 80%;
+  max-width: 30rem;
+  height: auto;
+  box-shadow: 1rem 1rem 1rem #00000090;
+  border-radius: 3rem;
+
+  justify-self: center;
+  align-self: center;
+}
+
+/*about me*/
+#about-section {
+  padding-top: 5rem;
+  border: none;
+}
+
+.about-me {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.about-me .underline {
+  padding-bottom: 0.1rem;
+}
+
+.about-me a {
+  color: var(--accent-color-one);
+}
+
+/*projects*/
+#projects-section {
+  padding-top: 5rem;
+  border: none;
+}
+
+.project-intro {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.project-container {
+  margin: 4rem 2rem;
+  padding: 2rem;
+  box-shadow: 0.2rem 0.2rem 1rem #00000090;
+  border-radius: 1rem;
+  background-color: var(--background-color);
+
+  display: grid;
+  justify-content: center;
+  grid-gap: 1rem;
+}
+
+.project-container h2 {
+  font-size: 2rem;
+  margin: 0 0 1rem;
+}
+
+.project-container h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-img {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 27rem;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.project-description {
+  margin: 0;
+}
+
+.project-description {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.tech-stack {
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  gap: 1rem;
+}
+
+.html.underline::before {
+  background-color: #e34c26;
+}
+
+.css.underline::before {
+  background-color: #264de4;
+}
+
+.js.underline::before {
+  background-color: #f0db4f;
+}
+
+.php.underline::before {
+  background-color: #8993be;
+}
+
+.react.underline::before {
+  background-color: #61dbfb;
+}
+
+.project-buttons {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: center;
+  gap: 1rem;
+}
+
+a.site-button {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--light-color);
+  border: 0.15em solid var(--accent-color-one);
+  background-color: var(--accent-color-one);
+  border-radius: 0.5rem;
+  padding: 0.3rem 1rem;
+}
+
+a.github-button {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--highlight);
+  border: 0.15em solid var(--accent-color-one);
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
+  padding: 0.3rem 1rem;
+}
+
+a.github-button:hover {
+  color: var(--background-color);
+  font-weight: 600;
+  border: 0.15em solid var(--accent-color-one);
+  background-color: var(--accent-color-one);
+  border-radius: 0.5rem;
+  padding: 0.3rem 1rem;
+}
+
+/*contact*/
+.contact {
+  padding-bottom: 1rem;
+  width: 80%;
+  margin: 0 auto;
+  
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-logos {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.contact-logo:hover {
+  transition: linear 0.1s;
+  color: var(--accent-color-one);
+}
+
+/*back to top*/
+.to-top {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+}
+
+/*footer*/
+footer {
+  width: 100%;
+  height: 4rem;
+  box-shadow: 1rem 1rem 1rem #00000033;
+  background-color: var(--background-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  text-align: center;
+}
+
+/* media queries*/
+@media screen and (min-width: 700px) {
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  .project-information {
+    align-self: center;
+  }
+
+  .contact {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-title h1 {
+    font-size: 7rem;
+  }
+
+  .contact {
+    width: 30%;
+  }
+}
+
+
+@media screen and (min-width: 1250px) {
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2rem;
+  }
+
+  .project-information {
+    align-self: center;
+  }
+
+  .contact {
+    width: 27%;
+  }
+}
+
+@media screen and (prefers-color-scheme: light) {
+  html{
+    --background-color: #ffffff;
+    --light-color: #212121;
+  } 
+}
